@@ -2,17 +2,29 @@ psyncopath is a helper for rsync:
 - push or pull a mirrored directory.
 - add mirrored directory configuration in a user config file.
 
-Usage: 
 1- Config file
+
 Create a ~/.psyncopath config file containing the configuration. The
 configuration is a python script containing a "config" dictionary.  The
 following example declares a "mymirror" workspace:
 
 config['mymirror'] = { 'local_path':'your local path', 'remote_path':'the server/remote path', 'server':'user@host'}
 
+config settings:
+- local_path   :  Local directory to mirror.
+- remote_path  :  Location where mirroring is done (On the server if a server
+                  address is provided).
+- server :        user and hostname of a remote server where mirroring is done.
+- mode   :        "smb" if mirroring is done on a samba mount point.
+- temp_dir     :  local path where temporary files are created. Use this if not
+                  supported on remote location.
+
 2- server setup
+
 Ensure that the server has the ssh key of the client available. Password based
 authentication is not supported.
+
+Mirroring can be done localy if no server is provided.
 
 3- synchronize
 
