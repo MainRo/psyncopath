@@ -18,7 +18,7 @@ class Sync(object):
    def setMode(self, mode):
       if mode== 'smb':
          self.preserve_permissions = False
-         if self.temp_dir == None
+         if self.temp_dir == None:
             self.temp_dir = '/tmp/rsync'
 
    def setPath(self, local, remote):
