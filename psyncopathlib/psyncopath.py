@@ -81,7 +81,7 @@ class Sync(object):
 def usage():
    print "Psyncopath 1.1"
    print "Usage:"
-   print "psynchopath [workspace] [way]"
+   print "psyncopath [workspace] [way]"
    print "\tworkspace : workspace configuration name"
    print "\tway : push or pull"
 
