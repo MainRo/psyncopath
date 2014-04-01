@@ -19,7 +19,7 @@ class Sync(object):
       if mode== 'smb':
          self.preserve_permissions = False
          if self.temp_dir == None:
-            self.temp_dir = '/tmp/rsync'
+            self.setTempDir('/tmp/rsync')
 
    def setPath(self, local, remote):
       self.local_path = string.replace(local, " ", "\ ")
@@ -32,7 +32,8 @@ class Sync(object):
       Sets a local directory for filesystems that do not support mkstemp
    '''
    def setTempDir(self, temp_dir):
-      os.mkdir(temp_dir)
+      if os.path.exists(temp_dir) == False:
+         os.makedirs(temp_dir)
       self.temp_dir = temp_dir
 
    def getExcludeParam(self):
@@ -79,7 +80,7 @@ class Sync(object):
       p.wait()
 
 def usage():
-   print "Psyncopath 1.1"
+   print "Psyncopath 1.2"
    print "Usage:"
    print "psyncopath [workspace] [way]"
    print "\tworkspace : workspace configuration name"

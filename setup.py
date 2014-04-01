@@ -10,7 +10,7 @@ setup(
    description='Tool for synchronizing directories by using rsync',
    long_description=read('README'),
    license='MIT',
-   version='1.01',
+   version='1.02',
    author='Romain Picard',
    author_email='romain.picard@oakbits.com',
    url='https://github.com/MainRo/psyncopath',
